@@ -5,29 +5,17 @@
 using namespace std;
 
 int main() {  
-    Transport* A = new Auto;
-    Transport* B = new Bicycle;
-    Transport* C = new Cart;
-    int choice;
+    Auto* A = new Auto(2.45, 300);
+    Bicycle* B = new Bicycle(11.15, 40);
+    Cart* C = new Cart(5.35, 180);
+    
+    cout << "AUTO\n" << A
+         << "\nBICYCLE:\n" << B
+         << "\nCART:\n" << C << endl;
 
-    cout << "Choose a transport: \n"
-         << "1. Auto\n"
-         << "2. Bicycle\n"
-         << "3. Cart\n";
-    cout << "Your choice: ";
-    cin >> choice;
+    cin >> C; // for example, let's rewrite time and cost of CART
 
-    switch (choice) {
-        case 1:
-            A->getData();
-            break;
-        case 2:
-            B->getData();
-            break;
-        case 3:
-            C->getData();
-            break;
-    }
+    cout << "\nNEW CART\n" << C; // CART with new data 
 
     delete A;
     delete B;
